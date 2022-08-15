@@ -6,9 +6,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/argoproj/argocd-example-apps.git
+    repoURL: https://github.com/aboutphilippe/argo-example.git
     targetRevision: HEAD
-    path: helm-guestbook
+    path: apps/guestbook/source/helm-guestbook
     helm:
       parameters:
         - name: ingress.enabled

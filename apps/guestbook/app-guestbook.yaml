@@ -17,6 +17,8 @@ spec:
           value: guestbook.argocd-philippe.restack.sh
         - name: "ingress.annotations.kubernetes\\.io/ingress\\.class"
           value: "nginx"
+        - name: service.type
+          value: LoadBalancer
   destination:
     server: https://kubernetes.default.svc
     namespace: default

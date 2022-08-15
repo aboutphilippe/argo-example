@@ -51,7 +51,7 @@ spec:
               cpu: 1500m
               memory: 3Gi
           defaultUser:
-            password: bigdataonk8s
+            password: password
         dags:
           gitSync:
             enabled: true
@@ -66,21 +66,12 @@ spec:
             annotations:
               kubernetes.io/ingress.class: "nginx"
               nginx.ingress.kubernetes.io/rewrite-target: "/"
-              cert-manager.io/cluster-issuer: "lets-encrypt-cluster-issuer"
             path: "/"
             hosts: [
               airflow.argocd-philippe.restack.sh,
             ]
             tls:
               enabled: true
-        secret: 
-          - envName: "AIRFLOW_CONN_KUBERNETES_CLUSTER"
-            secretName: "kubernetes-cluster-conn"
-            secretKey: "AIRFLOW_CONN_KUBERNETES_CLUSTER"
-        extraSecrets:
-          kubernetes-cluster-conn:
-            data: |
-              AIRFLOW_CONN_KUBERNETES_CLUSTER: 'a3ViZXJuZXRlczovLz9fX2V4dHJhX189JTdCJTIyZXh0cmFfX2t1YmVybmV0ZXNfX2luX2NsdXN0ZXIlMjIlM0ErdHJ1ZSU3RAo='
   destination:
     server: https://kubernetes.default.svc
     namespace: orchestration

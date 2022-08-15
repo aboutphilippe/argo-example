@@ -2,7 +2,7 @@ apiVersion: "argoproj.io/v1alpha1"
 kind: Application
 metadata:
   name: apache-airflow
-  namespace: cicd
+  namespace: argocd
 spec:
   project: big-data-on-k8s
   source:
@@ -69,11 +69,10 @@ spec:
               cert-manager.io/cluster-issuer: "lets-encrypt-cluster-issuer"
             path: "/"
             hosts: [
-              airflow.tcc.bigdataonk8s.com,
+              airflow.argocd-philippe.restack.sh,
             ]
             tls:
               enabled: true
-              secretName: "airflow-tls-secret"
         secret: 
           - envName: "AIRFLOW_CONN_KUBERNETES_CLUSTER"
             secretName: "kubernetes-cluster-conn"

@@ -4,7 +4,7 @@ metadata:
   name: apache-airflow
   namespace: argocd
 spec:
-  project: big-data-on-k8s
+  project: default
   source:
     repoURL: https://airflow.apache.org/
     targetRevision: 1.6.0

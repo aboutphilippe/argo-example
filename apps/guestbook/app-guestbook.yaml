@@ -10,11 +10,11 @@ spec:
     targetRevision: HEAD
     path: helm-guestbook
     helm:
-    parameters:
-      - name: ingress.enabled
-        value: 'true'
-      - name: 'ingress.hosts[0]'
-        value: guestbook.argocd.argocd-philippe.restack.sh
+      parameters:
+        - name: ingress.enabled
+          value: 'true'
+        - name: 'ingress.hosts[0]'
+          value: guestbook.argocd.argocd-philippe.restack.sh
   destination:
     server: https://kubernetes.default.svc
     namespace: default
